@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Aditya aalu 💌</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #ffeef2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.slide {
+  display: none;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.active {
+  display: block;
+}
+
+h2 {
+  color: #ff4d88;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff4d88;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #e63e75;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active" id="slide1">
+  <h2>Aditya aalu 💌</h2>
+  <p>Are you missing me yet? 😌</p>
+
+  <label><input type="radio" name="q1"> Yes, obviously 😌</label>
+  <label><input type="radio" name="q1"> A little bit </label> 
+  <label><input type="radio" name="q1"> No </label>
+
+  <button onclick="nextSlide(2)">Next →</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+  <p>Are you tired babe? 🥺</p>
+
+  <label><input type="radio" name="q2"> Yes, come take care of me </label>
+  <label><input type="radio" name="q2"> A little tired </label> 
+  <label><input type="radio" name="q2"> I’m fine </label>
+
+  <button onclick="nextSlide(3)">Next →</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide" id="slide3">
+  <p>Should I come visit you? 👀</p>
+
+  <label><input type="radio" name="q3"> Yes, come now </label>
+  <label><input type="radio" name="q3"> Come soon </label>
+  <label><input type="radio" name="q3"> No </label>
+
+  <button onclick="showFinal()">Submit 💕</button>
+</div>
+
+<!-- Slide 4 (Result) -->
+<div class="slide" id="slide4">
+<p>I’ll be waiting… call me when you’re free😌💗</p>
+</div>
+
+<script>
+function nextSlide(n) {
+  document.querySelectorAll(".slide").forEach(s => s.classList.remove("active"));
+  document.getElementById("slide" + n).classList.add("active");
+}
+
+function showFinal() {
+  nextSlide(4);
+}
+</script>
+
+</body>
+</html>
